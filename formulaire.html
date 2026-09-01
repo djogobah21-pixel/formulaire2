@@ -2,120 +2,68 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fiche d'Inscription - Photo à coller</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formulaire Inscription</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-  body{font-family:Inter,sans-serif;background:#f2efe9;margin:0;padding:20px}
-  .page{max-width:800px;margin:0 auto;background:white;border-radius:0;box-shadow:0 20px 60px rgba(0,0,0,.12);border:1px solid #ddd}
-  
-  /* EN-TÊTE */
-  .header{padding:25px 35px;border-bottom:3px solid #111;display:flex;justify-content:space-between;align-items:flex-start}
-  .logo-box{display:flex;gap:15px;align-items:center}
-  .logo-box img{width:65px;height:65px;object-fit:contain;border:1.5px solid #111;padding:5px}
-  .header-text h1{margin:0;font-size:20px;font-weight:900;letter-spacing:-.02em}
-  .header-text p{margin:3px 0 0;font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.08em}
-  
-  /* CASE PHOTO A COLLER */
-  .photo-box{width:135px;height:160px;border:2.5px dashed #111;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#faf8f6}
-  .photo-box span{font-size:10px;font-weight:700;letter-spacing:.1em;color:#111}
-  .photo-box small{font-size:9px;color:#999;margin-top:5px;line-height:1.2}
-  .photo-icon{font-size:28px;margin-bottom:8px}
-
-  .content{padding:30px 35px}
-  label{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#111;margin-top:18px;display:block}
-  input,select,textarea{width:100%;padding:12px 14px;margin-top:6px;border:1.5px solid #222;border-radius:0;font-size:14px;box-sizing:border-box;background:white}
-  input:focus{outline:none;background:#fffde8}
-  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px }
-  .grid-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px }
-
-  .signature{margin-top:35px;display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid #111;padding-top:20px}
-  .sig-box{height:80px;border:1px solid #ccc}
-  .sig-box p{font-size:9px;text-align:center;margin-top:5px}
-
-  .footer{padding:18px 35px;background:#f5f3f0;display:flex;gap:10px;border-top:1px solid #ddd}
-  .btn{flex:1;padding:13px;border-radius:0;border:none;font-weight:800;cursor:pointer;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
-  .btn-black{background:#111;color:white}
-  .btn-white{background:white;color:#111;border:1.5px solid #111}
-
-  @media print{
-    body{background:white;padding:0}
-    .page{box-shadow:none;border:none}
-    .footer{display:none}
-    .photo-box{border:2.5px solid #111 !important; -webkit-print-color-adjust:exact}
-  }
+  body{font-family:Arial,sans-serif;background:#f3f3f3;margin:0;padding:15px}
+  .feuille{max-width:800px;margin:auto;background:#fff;padding:0;border:1px solid #000}
+  .top{display:flex;justify-content:space-between;padding:20px;border-bottom:3px solid #000}
+  .logo h2{margin:0;font-size:19px}
+  .logo p{margin:4px 0 0;font-size:11px}
+  .photo{width:130px;height:155px;border:2px dashed #000;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f9f9f9;text-align:center}
+  .photo b{font-size:11px}
+  .photo span{font-size:9px;color:#666}
+  .corps{padding:20px}
+  label{font-size:10px;font-weight:bold;display:block;margin-top:15px}
+  input,select{width:100%;padding:10px;border:1.5px solid #000;margin-top:5px;box-sizing:border-box}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  .btns{display:flex;gap:10px;padding:15px;background:#eee}
+  .btns button{flex:1;padding:12px;font-weight:bold;border:none;cursor:pointer}
+  .print{background:#fff;border:1.5px solid #000}
+  .pdf{background:#000;color:#fff}
+  @media print{.btns{display:none} body{background:#fff;padding:0} .feuille{border:none}}
 </style>
 </head>
 <body>
-
-<div class="page" id="form-to-print">
-  <!-- HEADER AVEC LOGO + CASE PHOTO -->
-  <div class="header">
-    <div class="logo-box">
-      <img src="logo.png" onerror="this.src='https://via.placeholder.com/65?text=LOGO'">
-      <div class="header-text">
-        <h1>GS NOUVELLE VISION / CHEZ L'ESTHÉTICIENNE</h1>
-        <p>Fiche d'Inscription Officielle - Année 2025-2026</p>
-        <p>Abidjan, Cocody Riviera Palmeraie - Tel: 01 70 46 44 71</p>
-      </div>
+<div class="feuille" id="aImprimer">
+  <div class="top">
+    <div class="logo">
+      <h2>GS NOUVELLE VISION / CHEZ L'ESTHÉTICIENNE</h2>
+      <p>FICHE D'INSCRIPTION OFFICIELLE 2025-2026</p>
+      <p>Cocody Riviera - 01 70 46 44 71</p>
     </div>
-
-    <div class="photo-box">
-      <div class="photo-icon">📷</div>
-      <span>COLLer PHOTO ICI</span>
-      <small>Photo d'identité<br>4x4 récente<br>Ne pas agrafer</small>
+    <div class="photo">
+      <div style="font-size:30px">📷</div>
+      <b>COLLER PHOTO ICI</b>
+      <span>Photo 4x4<br>Ne pas agrafer<br>Colle uniquement</span>
     </div>
   </div>
-
-  <div class="content">
-    <label>Informations Personnelles</label>
-    <div class="grid">
-      <input placeholder="Nom de famille">
-      <input placeholder="Prénoms">
+  <div class="corps">
+    <div class="row">
+      <div><label>NOM</label><input></div>
+      <div><label>PRENOMS</label><input></div>
     </div>
-    <div class="grid">
-      <input placeholder="Date de naissance">
-      <input placeholder="Lieu de naissance">
+    <div class="row">
+      <div><label>DATE DE NAISSANCE</label><input type="date"></div>
+      <div><label>CONTACT WHATSAPP</label><input></div>
     </div>
-    <div class="grid">
-      <input placeholder="Numéro WhatsApp">
-      <input placeholder="Numéro parent / tuteur">
+    <label>SERVICE / CLASSE</label>
+    <select><option>Massage Relaxant 20.000 FCFA</option><option>Massage Tonique 25.000 FCFA</option><option>Inscription Scolaire</option></select>
+    <label>DOMICILE</label><input>
+    <label>REMARQUES</label><input>
+    <div style="margin-top:30px;display:flex;justify-content:space-between">
+      <div style="text-align:center"><div style="width:200px;height:70px;border:1px solid #999"></div><label>Signature demandeur</label></div>
+      <div style="text-align:center"><div style="width:200px;height:70px;border:1px solid #999"></div><label>Direction</label></div>
     </div>
-
-    <label>Service / Classe Demandé</label>
-    <select>
-      <option>Massage Relaxant - 20 000 FCFA</option>
-      <option>Massage Tonique - 25 000 FCFA</option>
-      <option>Inscription Scolaire GS Nouvelle Vision</option>
-    </select>
-
-    <div class="grid">
-      <div><label>Domicile</label><input placeholder="Ex: Cocody Angré"></div>
-      <div><label>Profession / Niveau</label><input placeholder="Ex: Étudiante / Terminale"></div>
-    </div>
-
-    <label>Observations</label>
-    <textarea rows="2"></textarea>
-
-    <div class="signature">
-      <div><label>Signature du demandeur</label><div class="sig-box"></div></div>
-      <div><label>Cachet & Signature Direction</label><div class="sig-box"></div></div>
-    </div>
-
-    <p style="font-size:9px;color:#999;text-align:center;margin-top:20px">Fiche N° _____ | Date: ___/___/2025 | Ce document doit être imprimé et la photo collée avant dépôt</p>
   </div>
-
-  <div class="footer">
-    <button class="btn btn-white" onclick="window.print()">🖨️ Imprimer la fiche</button>
-    <button class="btn btn-black" onclick="downloadPDF()">📄 Enregistrer en PDF</button>
+  <div class="btns">
+    <button class="print" onclick="window.print()">🖨️ IMPRIMER</button>
+    <button class="pdf" onclick="toPDF()">📄 PDF</button>
   </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-function downloadPDF(){
-  html2pdf().set({margin:0, filename:'Fiche-Inscription-Avec-Photo.pdf', html2canvas:{scale:3}, jsPDF:{format:'a4', orientation:'portrait'}}).from(document.getElementById('form-to-print')).save();
-}
+function toPDF(){html2pdf().set({margin:0,filename:'Fiche-avec-Photo.pdf',html2canvas:{scale:2},jsPDF:{format:'a4'}}).from(document.getElementById('aImprimer')).save()}
 </script>
 </body>
 </html>
